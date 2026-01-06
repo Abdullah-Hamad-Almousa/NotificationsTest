@@ -44,7 +44,6 @@ class AndroidNotificationManagerImpl(private val context: Context) : Notificatio
     }
 
     override fun requestPermission() {
-        TODO("Not yet implemented")
     }
 
 }
