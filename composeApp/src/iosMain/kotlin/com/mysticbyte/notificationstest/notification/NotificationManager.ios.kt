@@ -10,7 +10,9 @@ import platform.UserNotifications.UNUserNotificationCenter
 
 class IosNotificationManager : NotificationManager {
 
-    override fun requestPermission() {
+    override suspend fun requestPermission(): Boolean {
+
+        var ged = false
 
         val center = UNUserNotificationCenter.currentNotificationCenter()
         center.requestAuthorizationWithOptions(
@@ -21,7 +23,11 @@ class IosNotificationManager : NotificationManager {
                 println("Notifications permission granted")
             }
 
+            ged = granted
+
         }
+
+        return  ged
 
     }
 

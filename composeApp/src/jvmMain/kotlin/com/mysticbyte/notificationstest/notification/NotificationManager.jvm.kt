@@ -6,7 +6,8 @@ import java.awt.TrayIcon
 
 class JvmNotificationManager : NotificationManager  {
 
-    override fun requestPermission() {
+    override suspend fun requestPermission(): Boolean {
+        return SystemTray.isSupported()
     }
 
     override fun showNotification(title: String, message: String) {

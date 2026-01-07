@@ -4,7 +4,7 @@ interface NotificationManager {
 
     fun showNotification(title: String, message: String)
 
-    fun requestPermission()
+    suspend fun requestPermission() : Boolean
 
 }
 

@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Build
 import androidx.compose.ui.autofill.ContentType
 import androidx.core.app.NotificationCompat
+import org.jetbrains.compose.resources.getSystemResourceEnvironment
 import android.app.NotificationManager as AndroidNotificationManager
 
 
@@ -43,7 +44,8 @@ class AndroidNotificationManagerImpl(private val context: Context) : Notificatio
         manager.notify(1, builder.build())
     }
 
-    override fun requestPermission() {
+    override suspend fun requestPermission(): Boolean {
+        return true
     }
 
 }
